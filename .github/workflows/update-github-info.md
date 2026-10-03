@@ -11,7 +11,7 @@ tools:
   web-fetch:
   github:
     toolsets: [repos]
-    allowed-repos: ${{ github.repository }}
+    allowed-repos: public
     min-integrity: approved
     allowed:
       - get_repository
