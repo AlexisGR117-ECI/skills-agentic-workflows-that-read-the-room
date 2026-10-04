@@ -1,6 +1,6 @@
 ---
 name: update-github-info
-model: gpt-5
+model: gpt-5-mini
 on:
   schedule: daily
   workflow_dispatch:
