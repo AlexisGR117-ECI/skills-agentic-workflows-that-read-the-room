@@ -30,7 +30,7 @@ Keep the GitHub Info page current with concise, practical guidance for developer
 5. Use the GitHub repository API tools for all repository reads. Do not use shell commands, the GitHub CLI, or sandboxed commands to read repository guidance or reference files.
 6. Before reading a file with `get_file_contents`, list its parent directory with `get_file_contents` and request only the metadata fields needed for the listing.
 7. Read `site/content/github-info.md` and update it with short, practical summaries of relevant items from the GitHub Blog, GitHub Changelog, or Awesome Copilot workflows. Mention the source for every update.
-8. Use the `edit` tool to modify only `site/content/github-info.md`. Preserve the existing Markdown structure and do not change unrelated files.
-9. After making a meaningful update, use the `create_pull_request` safe output to open a pull request containing the change for Mona to review. Include a concise summary and the source URLs in the pull request body.
+8. Use the `edit` tool to modify `site/content/github-info.md`. Add or refresh a `## Latest from GitHub` section with 3 to 5 bullets, each with a one-sentence summary and a Markdown link to its source (GitHub Blog, GitHub Changelog, or Awesome Copilot workflows). Preserve the rest of the Markdown structure and do not change unrelated files.
+9. Always finish by calling the `create_pull_request` safe output so the change is opened as a pull request for Mona to review. The pull request body must include a concise summary and the source URLs (https://github.blog/latest/, https://github.blog/changelog/, https://awesome-copilot.github.com/workflows/) of every item used.
 
-Do not write directly to the default branch. If there are no relevant updates or no meaningful change is needed, do not create a pull request.
+Do not write directly to the default branch. Do not call `noop`: if the sources look unchanged, still refresh the `## Latest from GitHub` section with the current items and open the pull request. If a source cannot be fetched, use the others and note it in the pull request body.
