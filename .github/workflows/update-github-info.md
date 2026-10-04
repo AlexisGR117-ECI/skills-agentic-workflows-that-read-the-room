@@ -20,11 +20,6 @@ tools:
     allowed:
       - get_repository
       - get_file_contents
-network:
-  allowed:
-    - github.blog
-    - github.com
-    - awesome-copilot.github.com
 safe-outputs:
   create-pull-request:
     title-prefix: "[github-info] "
