@@ -2,7 +2,7 @@
 name: update-github-info
 engine:
   id: copilot
-  model: auto
+  model: claude-sonnet-5
 on:
   schedule: daily
   workflow_dispatch:
