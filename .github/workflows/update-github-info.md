@@ -1,6 +1,6 @@
 ---
 name: update-github-info
-model: gpt-5.6-luna
+model: gpt-5.3-codex
 on:
   schedule: daily
   workflow_dispatch:
