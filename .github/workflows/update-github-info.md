@@ -1,12 +1,15 @@
 ---
 name: update-github-info
-model: gpt-5.3-codex
+engine:
+  id: copilot
+  model: auto
 on:
   schedule: daily
   workflow_dispatch:
 permissions:
   contents: read
   pull-requests: read
+  copilot-requests: write
 tools:
   edit:
   web-fetch:
