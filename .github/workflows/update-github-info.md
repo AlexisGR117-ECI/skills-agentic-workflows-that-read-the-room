@@ -1,29 +1,25 @@
 ---
 name: update-github-info
+description: Draft website updates for Mona's GitHub Info site from official GitHub sources.
 engine:
   id: claude
   model: auto
 on:
-  schedule: daily
   workflow_dispatch:
-permissions:
-  contents: read
-  pull-requests: read
-  copilot-requests: write
+  schedule:
+    - cron: '17 9 * * *'
+safe-outputs:
+  create-pull-request:
+    title-prefix: "[mona] "
+    draft: true
+    fallback-as-issue: false
 tools:
   edit:
   web-fetch:
-  github:
-    toolsets: [repos]
-    allowed-repos: public
-    min-integrity: approved
-    allowed:
-      - get_repository
-      - get_file_contents
-safe-outputs:
-  create-pull-request:
-    title-prefix: "[github-info] "
-    draft: false
+network:
+  allowed:
+    - github.com
+    - github.blog
 ---
 
 # Update GitHub Info
